@@ -1,0 +1,47 @@
+@import '_mixin';
+
+@include respond-to(handhelds){
+    .depu__home{
+        width: 100%;
+        .container{
+            width: 100%;
+            padding: 0;
+            position: absolute;
+            top: 40%;
+            transform: translateY(-50%);
+        }
+        .box__left{
+            @include box($display: block, $w: 60%);
+            margin-bottom: 60px;
+            img{
+                width: 100px;
+            }
+        }
+        .box__right{
+            @include box($display: block, $w: 60%);
+            margin: 0 auto;
+            li{
+                @include font($size: 25px, $line-h: 28px);
+                &.box__right--design{
+                    span{
+                        img{
+                            top: 3px;
+                            width: 75px;
+                        }
+                    }
+                }
+                &.box__right--publishing{
+                    b{
+                        &:before{
+                            @include position($t:20px);
+                            height: 10px;
+                        }
+                    }
+                }
+            }
+        }
+        .wrap__index{
+            display: none;
+        }
+    }
+}

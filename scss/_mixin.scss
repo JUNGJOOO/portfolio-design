@@ -1,0 +1,55 @@
+
+// @include position()
+@mixin position($p: null, $t: null, $r: null, $b: null, $l: null, $transform: null, $transition:null, $z: null) {
+    position : $p;
+    top : $t;
+    right: $r;
+    bottom: $b;
+    left: $l;
+    transform: $transform;
+    transition: $transition;
+    z-index: $z;
+}
+// @include box()
+@mixin box($display: null, $padding: null, $margin: null, $w: null, $h: auto, $line-h: null, $bg: null, $radius: null, $border: null, $shadow: null, $size:null, $line-h:null, $vertical:null) {
+    display: $display;
+    padding : $padding;
+    margin: $margin;
+    width: $w;
+    height: $h;
+    line-height: $line-h;
+    background-color: $bg;
+    border: $border;
+    border-radius: $radius;
+    box-shadow: $shadow;
+    font-size: $size;
+    line-height: $line-h;
+    vertical-align: $vertical;
+}
+
+// @include font()
+@mixin font($style: null, $weight: null, $size: null, $color: null, $align: null, $line-h: null, $space: null, $break: null ) {
+    font: {
+        style: $style;
+        weight: $weight;
+        size: $size;
+    }
+    color: $color;  
+    text-align: $align;
+    line-height: $line-h;
+    white-space: $space;
+    word-break: $break;
+}
+
+// reactive
+$mb-width: 768px;
+$pc-width: 1200px;
+
+@mixin respond-to($media) {
+    @if $media == handhelds {
+        @media only screen and (max-width: $mb-width) { @content; }
+    }
+    @else if $media == pc-screens {
+        @media only screen and (min-width: $pc-width) { @content; }
+    }
+}

@@ -1,0 +1,299 @@
+@import '_mixin';
+
+// home
+.depu__home{
+    width: calc(100% - 55px);
+    font-size: 0;
+    .container{
+        width: 1200px;
+        margin: 0 auto;
+        padding: 200px 0;
+        justify-content: center;
+        align-items: center;
+    }
+    .box__left{
+        @include box($display: inline-block, $w: 510px);
+        text-align: center;
+        vertical-align: top;
+        img{
+            width: 130px;
+        }
+    }
+    .box__right{
+        @include box($display: inline-block, $w: 690px);
+        text-align: left;
+        li{
+            @include font($size: 60px, $line-h: 70px, $weight: 300);
+            margin-bottom: 12px;
+            display: block;
+            b{
+                display:inline-block;
+                color: #000;
+            }
+            &.box__right--design{
+                span{
+                    padding-right: 5px;
+                    img{
+                        position: relative;
+                        top: 5px;
+                        width: 12rem;
+                    }
+                }
+            }
+            &.box__right--publishing{
+                b{
+                    position: relative;
+                    font-weight: 300;
+                    &:before{
+                        content:'';
+                        @include position($p: absolute, $t:45px, $l: 0, $z: -1);
+                        width: 100%;
+                        height: 25px;
+                        background-color: #fedb01;
+                    }
+                }
+                span{
+                    color: #0145ff;
+                }
+            }
+        }
+    }
+    .wrap__index{
+        @include box($margin: 0 auto, $padding: 0 0 200px 0, $w: 1200px);
+        &:after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .wrap__right{
+            float: right;
+            width: 690px;
+            font-size: 0;
+            li{
+                @include box($display: inline-block, $w:calc((100% - 20px) / 2), $size: 15px, $line-h: 30px, $vertical:top);
+                &+li{margin-left: 20px;}
+            }
+        }
+    }
+}
+
+// all
+.depu__all{
+    width: calc(100% - 55px);
+    section{
+        width: 100%;
+        font-size: 0;
+        .list{
+            position: relative;
+            @include box($display: inline-block, $padding: 30% 0 0 0, $w: 33.333%, $h: auto, $vertical:top);
+            &:hover{
+                .inBox__border{display: block;}
+                .inBox{display: block;}
+                img{width: 85%;}
+            }
+            img{
+                @include position($p: absolute, $t:50%, $l: 50%, $transform:translate(-50%, -50%), $transition: all 1s ease);
+                width: 80%;
+            }
+            .inBox{
+                display: none;
+                @include position($p:absolute, $t: 0, $r: 0, $b: 0, $l:0, $transition: all 0.5s ease);
+                width: calc(100% - 20px);
+                height: calc(100% - 20px);
+                border: 10px solid #000;
+                background-color: rgba(0,0,0,0.4);
+                cursor: pointer;
+                .inBox__txt{
+                    @include position($p: absolute, $t: 50%, $l: 40px, $transform: translateY(-50%));
+                    text-align: left;
+                    strong{
+                        @include font($size: 13px, $weight: 700, $color: #fff);
+                        padding: 3px 7px;
+                        background-color: #0145ff;
+                    }
+                    .txt{
+                        @include font($size: 30px, $line-h: 30px, $weight: 700, $color: #fff);
+                        padding: 8px 0 10px;
+                    }
+                    .hidetxt{
+                        @include font($size: 18px, $line-h: 22px, $align: left, $color: #fff);
+                        transition: all 0.5s ease;
+                    }
+                }
+            }
+            .hidetxt__btn{
+                @include position($p: absolute, $b: 0, $z: 99);
+                width: 100%;
+                height: 50px;
+                padding-left: 10px;
+                background-color: #fedb01;
+                button{
+                    @include position($p:relative, $transition: all 0.2s);
+                    @include font($size: 1rem, $line-h: 50px, $weight: 800, $color: #000, $align: left);
+                    padding-right: 20px;
+                    margin-right: 20px;
+                    cursor: pointer;
+                    opacity: 1;
+                    &:after{
+                        content: '\003E';
+                        @include position($p:absolute, $t: 50%, $r: 0, $transform: translateY(-50%), $transition: all 0.2s);
+                        @include box($display: block, $w: 14px, $h: 14px, $bg: #000, $radius: 7px, $vertical: top);
+                        @include font($size: 11px, $line-h: 14px, $weight: 100, $color: #fff, $align: center);
+                    }
+                    &:hover {
+                        color: #0145ff;
+                        text-decoration: underline;
+                        transition: all 0.5s;
+                        &:after{
+                            background-color: #0145ff;
+                        }
+                    }
+                }
+            }
+        }
+        .list__color2{background-color: rgba(0,0,0,0.1);}
+    }
+    section.mSection1 .list{
+        img{
+            top : 45%;
+        }
+        .inBox__txt{
+            top: 45%;
+        }
+    }
+}
+
+.depu_index{
+    width: calc(100vw - 55px);
+    .wrap{
+        overflow: visible;
+        @include box($margin: 0 auto, $w: 1200px, $h: 100vh);
+    }
+    .swiper-container {
+        overflow: visible !important;
+        height: 100vh;
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+            &:first-child section .section__right img {right: -65px;}
+            section{
+                @include position($p: absolute, $t: 50%, $l: 50%, $transform: translate(-50%, -50%));
+                width: 1200px;
+                text-align: left;
+                &:after{
+                    content: '';
+                    display: block;
+                    clear: both;
+                }
+                .section__left{
+                    float: left;
+                    width: 50%;
+                    .section__tit{
+                        @include font($size: 2.8rem, $weight: 700, $line-h: 2.8rem);
+                        position: relative;
+                        display: inline-block;
+                        margin-left: 80px;
+                    }
+                    .section__subtit{
+                        @include font($size: 1rem, $weight: 700, $line-h: 1rem);
+                        padding: 40px 0 15px 80px;
+                        b{
+                            position: relative;
+                            margin-right: 5px;
+                            font-weight: 700;
+                            &:before{
+                                content:'';
+                                @include position($p: absolute, $t: 11px, $l: 0, $z: -1);
+                                width: 100%;
+                                height: 8px;
+                                background-color: #fedb01;;
+                            }
+                        }
+                    }
+                    .section__desc{
+                        padding: 0 0 40px 80px;
+                        width: 420px;
+                        font-size: 0.9rem;
+                        line-height: 2.2rem;
+                    }
+                    .section_btn{
+                        padding-left: 80px;
+                        font-size: 0;
+                        button{
+                            @include box($display: block, $margin: 0 0 10px 0, $padding: 0 20px 0 0);
+                            @include font($size: 1rem, $weight: bold, $color: #000);
+                            position: relative;
+                            text-decoration: initial;
+                            transition: all 0.5s;
+                            &:after{
+                                content: '\003E';
+                                @include position($p: absolute, $t: 2px, $r: 0, $transition: all 0.2s);
+                                @include box($display: block, $w: 14px, $h: 14px, $radius: 7px, $bg: #000);
+                                font-size: 11px;
+                                font-weight: 100;
+                                color: #fff;
+                            }
+                            &:hover {
+                                text-decoration: underline;
+                                color: #0145ff;
+                                transition: all 0.5s;
+                                &:after{
+                                    background-color: #0145ff;
+                                }
+                            }
+                        }
+                      
+                    }
+                }
+                .section__right{
+                    float: left;
+                    position: relative;
+                    width: 50%;
+                    height: 350px;
+                    img{
+                        @include position($p:absolute, $t: -65px, $r: -70px);
+                        width: 120%;
+                    }
+                }
+                &:after{
+                    content:'';
+                    display: block;
+                    clear: both;
+                }
+            }
+        }
+    }
+    .swiper-pagination{
+        right: 25px;
+        top: 47%;
+        z-index: 300;
+        .swiper-pagination-bullet{
+            display: block;
+            background: #fff;
+            &+.swiper-pagination-bullet{
+                margin-top: 10px;
+            }
+        }
+        .swiper-pagination-bullet-active{
+            background: #666;
+        }
+    }
+}
+
+
+@include respond-to(handhelds){
+    
+}
