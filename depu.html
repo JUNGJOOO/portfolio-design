@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<title>이정주 포트폴리오</title>
+    <meta name="robots" content="" />
+	<link rel="stylesheet" href="css/reset.css" />
+	<link rel="stylesheet" href="css/depu.css" />
+    <link rel="stylesheet" href="css/depu_common.css" />
+    <link rel="stylesheet" href="css/respond.css" />
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<body>
+    <header>
+        <a href="#" class="all">
+            <span></span>
+            <span></span>
+        </a>
+        <div class="nav">
+            <h2 class="hidden">메뉴</h2>
+            <nav class="gnb__menu">
+                <ul>
+                    <li>
+                        <a class="gnb__active" href="depu.html"><span>Home</span></a>
+                    </li>
+                    <li>
+                        <a href="depu_all.html"><span>All projects</span></a>
+                    </li>
+                    <li>
+                        <a href="depu/depu_index.html"><span>Design + Publishing</span></a>
+                    </li>
+                </ul>
+            </nav>
+            <a href="#" class="close"></a>
+        </div>
+    </header>
+    <script>
+        $(document).ready(function(){
+        $(".all").on("click", function () {
+            $(".nav").addClass("on");
+            $(".all").addClass("hidden");
+        });
+        $(".nav .close").on("click", function () {
+            $(".nav").removeClass("on");
+            $(".all").removeClass("hidden");
+        });
+    })
+    </script>
+    <main class="depu__home">
+        <div class="container">
+            <div class="box__left">
+                <img src="images/wavinghand.png" alt="흔드는 손모양">
+            </div>
+            <div class="box__right">
+                <ul>
+                    <li><b>제 소개를 하겠습니다.</b></li>
+                    <li><b>안녕하세요.</b></li>
+                    <li class="box__right--design"><b><span><img src="images/design.png" alt="디자인폰트"/></span>을 전공하여</b></li>
+                    <li class="box__right--publishing">
+                        <b>
+                            &#60;<span>h2</span>&#62;퍼블리싱&#60;&#47;<span>h2</span>&#62;
+                        </b>
+                    </li>
+                    <li><b>하는 이정주입니다.</b></li>
+                </ul>
+            </div>
+        </div>
+        <div class="wrap__index">
+            <div class="wrap__right">
+                <ul>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="copyright">COPYRIGHT Ⓒ JEONG JU. ALL RIGHTS RESERVED</div>
+            <div class="by">DESIGN BY. LEE JEONG JU</div>
+        </div>
+    </footer>
+</body>
+
+</html>
