@@ -1,0 +1,12 @@
+// reactive
+$tablet-width: 768px;
+$pc-width: 1200px;
+
+@mixin respond-to($media) {
+    @if $media == handhelds {
+        @media all and (max-width: $tablet-width) { @content; }
+    }
+    @else if $media == pc-screens {
+        @media all and (min-width: $pc-width) { @content; }
+    }
+}
