@@ -1,0 +1,154 @@
+@import '_mixin';
+
+body{color: #222;}
+.hide{font-size: 0;}
+.wrap{
+    header{
+        margin-bottom: 170px;
+    }
+}
+
+// header
+header{
+    @include position($p:fixed, $t: 0, $r: 0, $z: 100);
+    width: 55px;
+    height: 100vh;
+    font-size: 0;
+    background-color: #000;
+    .nav-wrap__mobile > a{
+        @include position($p:fixed, $t: 15px, $r: 15px, $z: 100);
+        display: block;
+        width: 25px;
+        height: 25px;
+        .bar1, .bar2, .bar3 {
+            margin: 7px 0;
+            width: 25px;
+            height: 1px;
+            background-color: white;
+            transition: 0.4s;
+        }
+        &.change{
+            .bar1 {
+                -webkit-transform: rotate(-45deg) translate(-8px, 4px);
+                transform: rotate(-45deg) translate(-8px, 4px);
+            }
+            .bar2 {opacity: 0;}
+            .bar3 {
+                -webkit-transform: rotate(45deg) translate(-8px, -4px);
+                transform: rotate(45deg) translate(-8px, -4px);
+            }
+        }
+    }
+    .gnb__mobile{
+        @include position($p:absolute, $r: 55px);
+        @include box($w: calc(100vw - 55px), $h: 100vh, $bg: #000);
+        &:before{
+            content: '';
+            @include position($p:absolute, $t: -8%, $r: -5%);
+            width: 50vw;
+            height: 120vh;
+            background: url(../images/logo_w.png) no-repeat;
+            opacity: 0.1;
+        }
+        ul{
+            @include position($p:absolute, $l: 50%, $t: 50%, $transform: translate(-50%,-50%));
+            width: 60%;
+           li{
+                text-align: left;
+                margin-bottom: 20px;
+                a{
+                    @include font($size: 85px, $weight: 700, $line-h:100px, $color: rgba(255,255,255,0.5));
+                    &.gnb__active{color: rgba(255,255,255,1)}
+                    &:hover{color: rgba(255,255,255,1)}
+                }
+            }
+        }
+    }
+}
+
+// footer
+footer{
+    width: calc(100vw - 55px);
+    border-top: 1px solid #000;
+    .container{
+        @include box($margin: 0 auto, $padding: 50px 0, $w: 1200px, $size: 0.9rem);
+        .copyright{float: left;}
+        .by{float: right;}
+        &:after{
+            content:'';
+            display: block;
+            clear: both;
+        }
+    }
+}
+.footer__next{
+    background-color: #111;
+    .container{
+        width: 50%;
+        margin: 0 auto;
+        .footer__page{
+            @include font($size: 1.1rem, $weight: 300, $line-h: 1.5rem);
+            display: block;
+            color: rgba(255,255,255,0.5);
+        }
+        .footer__tit{
+            @include box($display: inline-block, $padding: 15px 0 0 0, $vertical: top);
+            @include font($size: 1.7rem, $line-h: 1.7rem, $color: #fff);
+            position: relative;
+            transition: all 0.2s;
+            cursor: pointer;
+            &:hover{
+                color: rgba(255,255,255,0.7);
+                &::after{opacity: 0.5;}
+            }
+            &::after{
+                content: '';
+                @include position($p:absolute, $t: 14px, $r: -60px, $transition: all 0.2s);
+                width: 30px;
+                height: 30px;
+                background: url(../images/page_back.png)no-repeat;
+                background-size: 100% auto;
+            }
+        }
+    }
+}
+@include respond-to(handhelds){
+    header{
+        height: 55px;
+        .nav{
+            &:before{
+                content: '';
+                @include position($p:absolute, $t: -8%, $r: -5%, $z:-1);
+                width: 50vw;
+                height: 120vh;
+            }
+        }
+        .gnb__mobile{
+            width: 100vw;
+            right: 0;
+            &:before{
+                width: 100vw;
+            }
+            ul{
+                width: 80%;
+                li a{
+                    font-size: 60px;
+                    line-height: 70px;
+                }
+            }
+        
+        }
+    }
+    footer{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        .container{
+            @include box($w: 100%);
+            text-align: center;
+            padding: 30px 0;
+            .copyright{float: none;}
+            .by{float: none;}
+        }
+    }
+}
