@@ -1,0 +1,229 @@
+body {
+  color: #222;
+}
+
+.hide {
+  font-size: 0;
+}
+
+.wrap header {
+  margin-bottom: 170px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  width: 55px;
+  height: 100vh;
+  font-size: 0;
+  background-color: #000;
+}
+
+header .nav-wrap__mobile > a {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 100;
+  display: block;
+  width: 25px;
+  height: 25px;
+}
+
+header .nav-wrap__mobile > a .bar1, header .nav-wrap__mobile > a .bar2, header .nav-wrap__mobile > a .bar3 {
+  margin: 7px 0;
+  width: 25px;
+  height: 1px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+header .nav-wrap__mobile > a.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-8px, 4px);
+  transform: rotate(-45deg) translate(-8px, 4px);
+}
+
+header .nav-wrap__mobile > a.change .bar2 {
+  opacity: 0;
+}
+
+header .nav-wrap__mobile > a.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -4px);
+  transform: rotate(45deg) translate(-8px, -4px);
+}
+
+header .gnb__mobile {
+  position: absolute;
+  right: 55px;
+  width: calc(100vw - 55px);
+  height: 100vh;
+  background-color: #000;
+}
+
+header .gnb__mobile:before {
+  content: '';
+  position: absolute;
+  top: -8%;
+  right: -5%;
+  width: 50vw;
+  height: 120vh;
+  background: url(../images/logo_w.png) no-repeat;
+  opacity: 0.1;
+}
+
+header .gnb__mobile ul {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 60%;
+}
+
+header .gnb__mobile ul li {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+header .gnb__mobile ul li a {
+  font-weight: 700;
+  font-size: 85px;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 100px;
+}
+
+header .gnb__mobile ul li a.gnb__active {
+  color: white;
+}
+
+header .gnb__mobile ul li a:hover {
+  color: white;
+}
+
+footer {
+  width: calc(100vw - 55px);
+  border-top: 1px solid #000;
+}
+
+footer .container {
+  padding: 50px 0;
+  margin: 0 auto;
+  width: 1200px;
+  height: auto;
+  font-size: 0.9rem;
+}
+
+footer .container .copyright {
+  float: left;
+}
+
+footer .container .by {
+  float: right;
+}
+
+footer .container:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.footer__next {
+  background-color: #111;
+}
+
+.footer__next .container {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.footer__next .container .footer__page {
+  font-weight: 300;
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+  display: block;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.footer__next .container .footer__tit {
+  display: inline-block;
+  padding: 15px 0 0 0;
+  height: auto;
+  vertical-align: top;
+  font-size: 1.7rem;
+  color: #fff;
+  line-height: 1.7rem;
+  position: relative;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.footer__next .container .footer__tit:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer__next .container .footer__tit:hover::after {
+  opacity: 0.5;
+}
+
+.footer__next .container .footer__tit::after {
+  content: '';
+  position: absolute;
+  top: 14px;
+  right: -60px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  width: 30px;
+  height: 30px;
+  background: url(../images/page_back.png) no-repeat;
+  background-size: 100% auto;
+}
+
+@media only screen and (max-width: 768px) {
+  header {
+    height: 55px;
+  }
+  header .nav:before {
+    content: '';
+    position: absolute;
+    top: -8%;
+    right: -5%;
+    z-index: -1;
+    width: 50vw;
+    height: 120vh;
+  }
+  header .gnb__mobile {
+    width: 100vw;
+    right: 0;
+  }
+  header .gnb__mobile:before {
+    width: 100vw;
+  }
+  header .gnb__mobile ul {
+    width: 80%;
+  }
+  header .gnb__mobile ul li a {
+    font-size: 60px;
+    line-height: 70px;
+  }
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  footer .container {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding: 30px 0;
+  }
+  footer .container .copyright {
+    float: none;
+  }
+  footer .container .by {
+    float: none;
+  }
+}
+/*# sourceMappingURL=depu_common.css.map */
